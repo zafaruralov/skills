@@ -1,10 +1,7 @@
-import React, { useState } from "react";
-import { motion } from "framer-motion";
+import React, { useState, useRef, useEffect } from "react";
 import Sidebar from "./sidebar/sidebar";
 import DynamicButton from "../components/button";
-import Section from "../components/motion/index";
-// import Badge from "../components/badge";
-// image
+
 import HireBanner from "../assets/images/hire/hire-banner.svg";
 import Sparkle from "../assets/images/hire/sparkle.svg";
 import ArrowLink from "../assets/images/hire/arrow-link.svg";
@@ -144,12 +141,40 @@ const ChatLayout = () => {
     })
   };
 
+  // TODO
+  useEffect(() => {
+    const toBottomScroller = () => {
+      const reveals = document.querySelectorAll(".reveal");
+
+      const handleScroll = () => {
+        const windowHeight = window.innerHeight;
+
+        reveals.forEach((reveal) => {
+          const revealTop = reveal.getBoundingClientRect().top;
+          const revealPoint = 50;
+
+          if (revealTop < windowHeight - revealPoint) {
+            reveal.classList.add("aktiv", "line");
+          }
+        });
+      };
+
+      window.addEventListener("scroll", handleScroll);
+
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    };
+
+    toBottomScroller();
+  }, []);
+
   return (
     <div className="">
-      {/* <Sidebar className="chat-sidebar container" /> */}
-      <section className="hire container">
+      <Sidebar className="chat-sidebar container" />
+      <section className="hire container animation">
         <div className="hire__wrapper">
-          <motion.div custom={0} initial="hidden" animate="visible" variants={textVariants} className="hire__subtitle">
+          <div className="hire__subtitle">
             <div className="hire__subtitle-ai">
               <img src={Sparkle} alt="ai image" aria-label="ai ask image" />
               <p className="hire__subtitle-title">Find your candidate easily</p>
@@ -158,37 +183,19 @@ const ChatLayout = () => {
               <p className="hire__subtitle-desc">why you should use IT Skills</p>
               <img src={ArrowLink} alt="link go image" aria-label="link" />
             </div>
-          </motion.div>
+          </div>
 
           <div className="hire__title">
             <div className="hire__title-wrapper">
-              <motion.h1
-                custom={1.2}
-                initial="hidden"
-                animate="visible"
-                variants={textVariants}
-                className="hire__title-title"
-              >
+              <h1 className="hire__title-title">
                 <span className="hire__title-subtitle">HIRE</span>
                 TOP talent today
-              </motion.h1>
-              <motion.p
-                custom={1.4}
-                initial="hidden"
-                animate="visible"
-                variants={textVariants}
-                className="hire__title-desc"
-              >
+              </h1>
+              <p className="hire__title-desc">
                 Don’t waste your time to seek candidates instead <br /> of building excellent product
-              </motion.p>
+              </p>
             </div>
-            <motion.div
-              custom={1.6}
-              initial="hidden"
-              animate="visible"
-              variants={textVariants}
-              className="hire__actions"
-            >
+            <div className="hire__actions">
               <DynamicButton
                 text="Find a Developer"
                 padding="25px 15px"
@@ -213,11 +220,11 @@ const ChatLayout = () => {
                 border="1px solid #0D92F4"
                 onClick={() => console.log("Navigate Button Clicked")}
               />
-            </motion.div>
+            </div>
           </div>
         </div>
 
-        <motion.img
+        <img
           custom={1}
           initial="hidden"
           animate="visible"
@@ -246,10 +253,10 @@ const ChatLayout = () => {
           </div>
         </div>
       </section>
-      <section className="candidates container">
-        {cardVariants.map((item) => (
-          <div key={item.id} className="candidates-container">
-            <h1 className="candidates-container__header">{item.text}</h1>
+      <section className="candidates container ">
+        {cardVariants.map((item, index) => (
+          <div key={item.id} className="candidates-container reveal " style={{ "--i": item.id - 1.5 }}>
+            <h1 className="candidates-container__header ">{item.text}</h1>
             <img src={Vector} alt="background vector" className="candidates-container__vector" />
             <img src={item.icon} alt="arrow" className="candidates-container__icon" />
             <h1 className="candidates-container__number">{item.number}</h1>
@@ -257,14 +264,14 @@ const ChatLayout = () => {
         ))}
       </section>
       <section className="steps container">
-        <div className="steps-header">
+        <div className="steps-header reveal" style={{ "--i": 0.3 }}>
           <h2 className="steps-header__subtitle">Get candidate in 3 steps</h2>
           <p className="steps-header__desc">
             Find and hire the right candidate in 3 simple steps – fast and hassle-free!
           </p>
         </div>
-        <div className="steps-wrapper">
-          <motion.div
+        <div className="steps-wrapper reveal" style={{ "--i": 0.5 }}>
+          <div
             custom={0}
             initial="hidden"
             animate="visible"
@@ -275,7 +282,7 @@ const ChatLayout = () => {
             <h1 className="steps-wrapper__container-title">Login</h1>
             <p className="steps-wrapper__container-desc">Login your account</p>
             <h1 className="steps-wrapper__container-ways">1</h1>
-          </motion.div>
+          </div>
           <div className="steps-wrapper__container blue">
             <img className="steps-wrapper__container-image" src={BlueHash} alt="image bg" aria-label="image stapes" />
             <h1 className="steps-wrapper__container-title">Choose</h1>
@@ -291,13 +298,13 @@ const ChatLayout = () => {
         </div>
       </section>
       <section className="available container">
-        <header className="available-header">
+        <header className="available-header reveal" style={{ "--i": 0.3 }}>
           <h1 className="available-header__title">Currently available candidates</h1>
           <p className="available-header__desc">Browse top candidates available to hire today.</p>
         </header>
         <div className="available-wrapper">
           {candidateVariants.map((item) => (
-            <div key={item.id} className="available-wrapper__container">
+            <div key={item.id} className="available-wrapper__container reveal" style={{ "--i": item.id - 1.5 }}>
               <div className="available-wrapper__container-img">
                 <div className="available-wrapper__container-badge">
                   <img src={Verify} alt="Verify" className="available-wrapper__container-badge-icon" />
@@ -361,7 +368,6 @@ const ChatLayout = () => {
       </section>
       <section className="development container">
         <div className="development-container">
-          {/* <img src="" alt="icon" className="development-container__image" /> */}
           <div className="development-container__content">
             <h1 className="development-container__content-title">
               Are you <br /> Professional Developer?
@@ -379,22 +385,23 @@ const ChatLayout = () => {
         </div>
       </section>
       <section className="faq-section container">
-        <header className="available-header">
+        <header className="available-header  reveal" style={{ "--i": 0.5 }}>
           <h1 className="available-header__title">FAQ</h1>
         </header>
         <div className="faq-section__list">
           {faqs.map((faq) => (
             <div
               key={faq.id}
-              className={`faq-section__item ${faq.isOpen ? "open" : ""}`}
+              className={`faq-section__item reveal ${faq.isOpen ? "open" : ""}`}
+              style={{ "--i": faq.id - 1.5 }}
               onClick={() => toggleFaq(faq.id)}
             >
               <div className="faq-section__question">
                 <h3 className="faq-section__question-title">{faq.question}</h3>
                 <span className="faq-section__arrow"></span>
               </div>
-              <div class="faqcard__body">
-                <p class="faq-section__answer">{faq.answer}</p>
+              <div className="faqcard__body">
+                <p className="faq-section__answer">{faq.answer}</p>
               </div>
             </div>
           ))}

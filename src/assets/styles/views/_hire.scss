@@ -21,6 +21,7 @@
     border: 1px solid $border-color;
     border-radius: 100px;
     padding: 6px 12px;
+    animation: slide 0.5s forwards;
 
     &-ai {
       display: flex;
@@ -50,6 +51,7 @@
     grid-column: 3;
     width: 522px;
     height: 532px;
+    animation: slide-right 1s forwards;
   }
 
   &__title {
@@ -70,6 +72,7 @@
       line-height: 85.92px;
       letter-spacing: 0.01em;
       text-transform: uppercase;
+      animation: slide 1s forwards;
     }
 
     &-desc {
@@ -78,6 +81,7 @@
       line-height: 34px;
       letter-spacing: 0.01em;
       color: $desc-gray;
+      animation: slide 1.5s forwards;
     }
 
     &-subtitle {
@@ -97,14 +101,18 @@
   &__actions {
     display: flex;
     gap: 10px;
+    animation: slide 2s forwards;
   }
 
   @media (max-width: 1200px) {
+    display: flex;
     grid-template-columns: 1fr;
     padding: 100px 80px 0 80px;
 
     &__wrapper {
       order: 2;
+      align-items: center;
+      justify-content: center;
     }
 
     &__icon {
@@ -133,13 +141,20 @@
   }
 
   @media (max-width: 768px) {
+    display: grid;
     grid-template-columns: 1fr;
     padding: 50px 40px 0 40px;
 
     &__subtitle {
       flex-direction: column;
-      max-width: 100%;
+      width: 100%;
+      flex-direction: row;
+      align-items: center;
       gap: 16px;
+    }
+
+    &__actions {
+      justify-content: center;
     }
 
     &__icon {
@@ -149,16 +164,17 @@
 
     &__title {
       &-title {
-        font-size: 48px;
-        line-height: 60px;
+        font-size: 36px;
+        line-height: 40px;
       }
 
       &-subtitle {
-        font-size: 48px;
-        line-height: 60px;
+        font-size: 36px;
+        line-height: 40px;
       }
 
       &-desc {
+        text-align: center;
         font-size: 16px;
         line-height: 28px;
       }
@@ -169,9 +185,8 @@
     padding: 30px 20px 0 20px;
 
     &__subtitle {
-      flex-direction: column;
       gap: 12px;
-      text-align: center;
+      align-items: center;
 
       &-ai,
       &-link {
@@ -186,18 +201,18 @@
 
     &__title {
       &-title {
-        font-size: 36px;
-        line-height: 48px;
+        font-size: 20px;
+        line-height: 38px;
       }
 
       &-subtitle {
-        font-size: 36px;
-        line-height: 48px;
+        font-size: 20px;
+        line-height: 38px;
       }
 
       &-desc {
-        font-size: 14px;
-        line-height: 24px;
+        font-size: 12px;
+        line-height: 20px;
       }
     }
 

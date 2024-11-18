@@ -18,3 +18,53 @@
     transform: translateZ(0);
   }
 }
+@keyframes slide-right {
+  0% {
+    opacity: 0;
+    transform: translate(20%);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+@keyframes slide {
+  from {
+    opacity: 0;
+    transform: translateX(-20%);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes slide-top {
+  from {
+    opacity: 0;
+    transform: translateY(-180%);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.reveal {
+  opacity: 0;
+}
+
+.reveal.aktiv {
+  --duration: 0.5s;
+  --stagger: 0.5s;
+  --interval: calc(var(--duration) - var(--stagger));
+  animation-name: slide;
+  animation-duration: var(--duration);
+  animation-delay: calc(var(--interval) * var(--i));
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+
+  &:nth-child(even) {
+    animation-name: slide-right;
+  }
+}

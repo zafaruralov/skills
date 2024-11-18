@@ -2,7 +2,21 @@
   background-color: #1a1a1a;
   color: #fff;
   padding: 30px 120px;
-  margin: 120px 0 0 0;
+  margin: 120px 0 0;
+
+  @media (max-width: 1024px) {
+    padding: 20px 60px;
+    margin: 80px 0 0;
+  }
+
+  @media (max-width: 768px) {
+    padding: 20px 40px;
+    margin: 60px 0 0;
+  }
+
+  @media (max-width: 480px) {
+    padding: 15px 20px;
+  }
 
   &-container {
     display: flex;
@@ -10,8 +24,17 @@
     flex-wrap: wrap;
     gap: 170px;
 
+    @media (max-width: 1024px) {
+      gap: 100px;
+    }
+
     @media (max-width: 768px) {
       gap: 80px;
+    }
+
+    @media (max-width: 480px) {
+      flex-direction: column;
+      gap: 50px;
     }
 
     &__logo {
@@ -24,14 +47,27 @@
       gap: 188px;
       flex: 4;
 
+      @media (max-width: 1024px) {
+        gap: 120px;
+      }
+
+      @media (max-width: 768px) {
+        flex-direction: column;
+        gap: 40px;
+      }
+
       &-wrapper {
         display: grid;
         grid-template-columns: repeat(4, auto);
         gap: 100px;
 
+        @media (max-width: 1024px) {
+          gap: 60px;
+        }
+
         @media (max-width: 768px) {
-          grid-template-columns: repeat(2, auto);
-          gap: 50px;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 40px;
         }
 
         @media (max-width: 480px) {
@@ -40,6 +76,7 @@
         }
       }
     }
+
     &__column {
       display: flex;
       flex-direction: column;
@@ -48,6 +85,7 @@
       &.number {
         align-items: flex-start;
         justify-content: center;
+
         a {
           gap: 12px;
           display: flex;
@@ -59,7 +97,6 @@
         font-size: 18px;
         font-weight: 600;
         line-height: 21.48px;
-        letter-spacing: 0.01em;
 
         @media (max-width: 480px) {
           font-size: 16px;
@@ -70,9 +107,8 @@
         font-size: 16px;
         font-weight: 400;
         line-height: 19.09px;
-        letter-spacing: 0.01em;
         text-decoration: none;
-        transition: all 0.3s;
+        transition: color 0.3s ease;
         color: $footer-link;
 
         &:hover {
@@ -121,20 +157,5 @@
     @media (max-width: 480px) {
       font-size: 10px;
     }
-  }
-
-  @media (max-width: 1024px) {
-    padding: 20px 60px;
-    gap: 100px;
-  }
-
-  @media (max-width: 768px) {
-    padding: 20px 40px;
-    gap: 50px;
-  }
-
-  @media (max-width: 480px) {
-    padding: 15px 20px;
-    margin: 60px 0 0 0;
   }
 }
