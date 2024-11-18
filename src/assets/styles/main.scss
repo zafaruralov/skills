@@ -1,5 +1,16 @@
 @import "./base/mixin.scss";
 @import "./base/variables";
 @import "./base/base";
+@import "./base/animation";
 
+@import "./components/button.scss";
+
+@import "./views/hire";
+@import "./views/footer";
+@import "./views/candidates";
+@import "./views/development";
+@import "./views/faq";
+@import "./views/steps";
+@import "./views/available";
+@import "./views/marqueue.scss";
 @import "./layout/sidebar";

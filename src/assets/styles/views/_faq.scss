@@ -1,0 +1,114 @@
+.faq-section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  max-width: 1440px;
+  padding: 120px 120px 0 120px;
+
+  &__list {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  &__item {
+    border-radius: 16px;
+    background: #fff;
+    max-height: 95px;
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    visibility: visible;
+    animation-delay: 0s;
+    animation-name: fadeInUp;
+
+    &.open {
+      max-height: 400px;
+
+      .faq-section__arrow::before {
+        height: 1px;
+      }
+    }
+    background: #fcfcfe;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  &__question {
+    width: 100%;
+    height: 95px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 24px 30px;
+    position: relative;
+    cursor: pointer;
+
+    &-title {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 23.87px;
+      letter-spacing: 0.01em;
+
+      @media (max-width: 768px) {
+        word-break: break-word;
+        @include limitLine(1);
+      }
+    }
+  }
+  &__arrow {
+    position: absolute;
+    display: flex;
+    top: 50%;
+    width: 35px;
+    height: 35px;
+    right: 40px;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: $text-black;
+    width: 26.67px;
+    height: 26.67px;
+    border-radius: 50%;
+
+    &::before {
+      width: 2px;
+      height: 15px;
+    }
+    &::after {
+      width: 15px;
+      height: 2px;
+    }
+    &::after,
+    &::before {
+      content: "";
+      display: flex;
+      transition: 0.2s;
+      position: absolute;
+
+      background: white;
+    }
+  }
+
+  &__answer {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.01em;
+    text-align: left;
+    padding: 0 24px 30px 24px;
+  }
+  &__body {
+    background: #f7f7f7;
+    width: calc(100% - 20px);
+    margin: 0 10px 10px 10px;
+    border-radius: 15px;
+    padding: 20px;
+    max-height: 250px;
+    overflow: auto;
+  }
+}

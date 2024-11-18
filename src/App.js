@@ -4,7 +4,7 @@ import ChatLayout from "./layouts/layout";
 
 function App() {
   return (
-    <div className="container">
+    <div>
       <ChatLayout />
     </div>
   );

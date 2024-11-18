@@ -1,0 +1,21 @@
+.marqueue {
+  overflow: hidden;
+  padding: 64px 0 0 0;
+  &-wrapper {
+    display: flex;
+    width: 200%;
+    gap: 80px;
+    padding: 7px 0;
+  }
+  &-group {
+    display: flex;
+    gap: 80px;
+    padding: 7px 0;
+    animation: scroll-x 10s linear infinite;
+
+    img {
+      width: 124.39px;
+      height: 36px;
+    }
+  }
+}
