@@ -1,0 +1,125 @@
+.cdfilter {
+  background: #f2f4fa;
+  height: 100%;
+  padding: 116px 0 48px 0;
+
+  &-section {
+    background: #fff;
+  }
+  &-gap {
+    display: flex;
+    gap: 20px;
+  }
+  &-filter {
+    display: flex;
+    flex-direction: column;
+    padding: 12px 20px;
+    background: $container-bg;
+    border: 1px solid #dfe6f4;
+    gap: 34px;
+    border-radius: 12px;
+    width: 325px;
+
+    &__choosen {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+      &-navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 6px 0;
+      }
+      &-title {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 20px;
+        color: $filter-text-black;
+      }
+      &-clear {
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 20px;
+        color: $filter-text-red;
+        cursor: pointer;
+      }
+      &-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+    }
+    &__items {
+      display: flex;
+      flex-direction: column;
+      gap: 34px;
+    }
+    &__item {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+
+      transition: max-height 0.3s ease;
+      overflow: hidden;
+      max-height: 35px;
+
+      &.open {
+        max-height: 400px;
+      }
+    }
+    &__navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 0;
+      cursor: pointer;
+      &-title {
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 20px;
+        color: $filter-text-black;
+      }
+    }
+    &__body {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      justify-content: center;
+
+      &-checkbox {
+        gap: 12px;
+        display: flex;
+        flex-direction: column;
+
+        &-more {
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 20px;
+          letter-spacing: -0.005em;
+          color: #4b556399;
+        }
+      }
+
+      &-label {
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        cursor: pointer;
+        input {
+          width: 20px;
+          height: 20px;
+          background: #0d92f4;
+          box-shadow: 0px 1px 2px 0px #14151a0d;
+        }
+        &-title {
+          font-size: 14px;
+          font-weight: 500;
+          line-height: 20px;
+          letter-spacing: -0.005em;
+          color: $filter-checkbox-text;
+        }
+      }
+    }
+  }
+}

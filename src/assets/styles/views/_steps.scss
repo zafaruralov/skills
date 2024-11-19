@@ -34,7 +34,6 @@
     display: flex;
     gap: 20px;
     align-items: center;
-    flex-wrap: wrap;
     justify-content: center;
 
     &__container {
@@ -100,7 +99,7 @@
     }
   }
 
-  @media (max-width: 1024px) {
+  @media (max-width: 1200px) {
     padding: 80px 60px 0 60px;
 
     &-header {
@@ -117,6 +116,7 @@
     &-wrapper {
       gap: 15px;
       flex-wrap: wrap;
+      justify-content: center;
 
       &__container {
         width: 300px;
