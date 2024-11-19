@@ -13,3 +13,31 @@
     }
   }
 }
+.dynamic-button {
+  font-size: inherit;
+  width: inherit;
+  max-width: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: inherit;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
+
+  @media (max-width: 480px) {
+    width: 100%;
+  }
+
+  .button-text {
+    display: flex;
+    justify-content: center;
+    font-size: inherit;
+  }
+
+  .button-icon-left {
+    display: flex;
+    align-items: center;
+  }
+}

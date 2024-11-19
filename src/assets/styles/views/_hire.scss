@@ -107,7 +107,7 @@
   @media (max-width: 1200px) {
     display: flex;
     grid-template-columns: 1fr;
-    padding: 100px 80px 0 80px;
+    padding: 80px 60px 0 60px;
 
     &__wrapper {
       order: 2;
@@ -121,6 +121,17 @@
       grid-column: 1;
       justify-self: center;
       margin-top: 30px;
+      order: 2;
+    }
+    &__subtitle {
+      &-ai {
+        font-size: 12px;
+        line-height: 20px;
+      }
+      &-link {
+        font-size: 12px;
+        line-height: 20px;
+      }
     }
 
     &__title {
@@ -143,7 +154,7 @@
   @media (max-width: 768px) {
     display: grid;
     grid-template-columns: 1fr;
-    padding: 50px 40px 0 40px;
+    padding: 100px 40px 0 40px;
 
     &__subtitle {
       flex-direction: column;
@@ -166,6 +177,7 @@
       &-title {
         font-size: 36px;
         line-height: 40px;
+        text-align: center;
       }
 
       &-subtitle {

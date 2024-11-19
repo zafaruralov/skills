@@ -35,6 +35,7 @@
     @media (max-width: 480px) {
       flex-direction: column;
       gap: 50px;
+      align-items: center;
     }
 
     &__logo {

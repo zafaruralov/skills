@@ -3,7 +3,16 @@
   flex-direction: column;
   gap: 30px;
   max-width: 1440px;
-  padding: 120px 120px 0 120px;
+  padding: 120px;
+
+  @media (max-width: 1024px) {
+    padding: 80px 60px 0 60px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 60px 20px;
+    gap: 20px;
+  }
 
   &__list {
     width: 100%;
@@ -14,7 +23,7 @@
 
   &__item {
     border-radius: 16px;
-    background: #fff;
+    background: #fcfcfe;
     max-height: 95px;
     transition: 0.3s;
     display: flex;
@@ -23,6 +32,7 @@
     visibility: visible;
     animation-delay: 0s;
     animation-name: fadeInUp;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
     &.open {
       max-height: 400px;
@@ -31,9 +41,6 @@
         height: 1px;
       }
     }
-    background: #fcfcfe;
-
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
 
   &__question {
@@ -50,24 +57,26 @@
     &-title {
       font-size: 20px;
       font-weight: 500;
-      line-height: 23.87px;
+      line-height: 1.2;
       letter-spacing: 0.01em;
 
       @media (max-width: 768px) {
+        font-size: 18px;
         word-break: break-word;
-        @include limitLine(1);
+      }
+
+      @media (max-width: 480px) {
+        font-size: 16px;
       }
     }
   }
+
   &__arrow {
     position: absolute;
     display: flex;
     top: 50%;
-    width: 35px;
-    height: 35px;
     right: 40px;
     transform: translateY(-50%);
-    display: flex;
     align-items: center;
     justify-content: center;
     background: $text-black;
@@ -79,18 +88,25 @@
       width: 2px;
       height: 15px;
     }
+
     &::after {
       width: 15px;
       height: 2px;
     }
+
     &::after,
     &::before {
       content: "";
       display: flex;
       transition: 0.2s;
       position: absolute;
-
       background: white;
+    }
+
+    @media (max-width: 768px) {
+      right: 20px;
+      width: 22px;
+      height: 22px;
     }
   }
 
@@ -101,7 +117,13 @@
     letter-spacing: 0.01em;
     text-align: left;
     padding: 0 24px 30px 24px;
+
+    @media (max-width: 768px) {
+      font-size: 14px;
+      padding: 0 20px 20px 20px;
+    }
   }
+
   &__body {
     background: #f7f7f7;
     width: calc(100% - 20px);
@@ -110,5 +132,15 @@
     padding: 20px;
     max-height: 250px;
     overflow: auto;
+
+    @media (max-width: 768px) {
+      width: 100%;
+      margin: 0;
+      padding: 15px;
+    }
+
+    @media (max-width: 480px) {
+      padding: 10px;
+    }
   }
 }

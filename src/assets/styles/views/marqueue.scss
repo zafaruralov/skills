@@ -19,3 +19,23 @@
     }
   }
 }
+@media (max-width: 1200px) {
+  .marqueue {
+    &-group {
+      img {
+        width: 100px;
+        height: 30px;
+      }
+    }
+  }
+}
+@media (max-width: 768) {
+  .marqueue {
+    &-group {
+      img {
+        width: 70px;
+        height: 25px;
+      }
+    }
+  }
+}

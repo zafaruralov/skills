@@ -54,7 +54,7 @@
   opacity: 0;
 }
 
-.reveal.aktiv {
+.reveal.active {
   --duration: 0.5s;
   --stagger: 0.5s;
   --interval: calc(var(--duration) - var(--stagger));

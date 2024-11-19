@@ -5,9 +5,10 @@
   gap: 20px;
   justify-content: center;
 
-  @media (max-width: 1024px) {
-    padding: 50px 60px 0;
-    grid-template-columns: 1fr;
+  @media (max-width: 1200px) {
+    padding: 80px 60px 0 60px;
+    grid: none;
+    justify-content: center;
   }
 
   @media (max-width: 768px) {
@@ -30,17 +31,18 @@
     padding: 20px;
     justify-content: space-between;
 
-    @media (max-width: 1024px) {
+    @media (max-width: 768px) {
       grid: none;
-      justify-content: center;
       width: 100%;
       height: 180px;
       padding: 15px;
     }
 
-    @media (max-width: 768px) {
-      height: 150px;
-    }
+    // @media (max-width: 768px) {
+    //   height: 150px;
+    //   width: 100%;
+    //   justify-content: space-between;
+    // }
 
     &__header {
       z-index: 2;

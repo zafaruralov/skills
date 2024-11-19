@@ -121,6 +121,11 @@ const ChatLayout = () => {
 
   const toggleFaq = (id) => {
     setFaqs((prevFaqs) => prevFaqs.map((faq) => (faq.id === id ? { ...faq, isOpen: !faq.isOpen } : faq)));
+
+    const target = document.querySelector(`.faq-section__item:nth-child(${id})`);
+    if (target) {
+      target.classList.toggle("opened");
+    }
   };
 
   const textVariants = {
@@ -152,10 +157,13 @@ const ChatLayout = () => {
         reveals.forEach((reveal) => {
           const revealTop = reveal.getBoundingClientRect().top;
           const revealPoint = 50;
-
-          if (revealTop < windowHeight - revealPoint) {
-            reveal.classList.add("aktiv", "line");
+          if (revealTop < windowHeight - revealPoint || reveal.classList.contains("open")) {
+            reveal.classList.add("active", "line");
           }
+
+          // if (revealTop < windowHeight - revealPoint) {
+          //   reveal.classList.add("active", "line");
+          // }
         });
       };
 
@@ -198,8 +206,8 @@ const ChatLayout = () => {
             <div className="hire__actions">
               <DynamicButton
                 text="Find a Developer"
-                padding="25px 15px"
-                className="button secondary"
+                backgroundColor="#0d92f4"
+                gap="10px"
                 onClick={() => console.log("Navigate Button Clicked")}
               />
               <DynamicButton
@@ -215,7 +223,6 @@ const ChatLayout = () => {
                 textColor="#0d92f4"
                 backgroundColor="#fff"
                 borderRadius="10px"
-                padding="11px 15px"
                 gap="10px"
                 border="1px solid #0D92F4"
                 onClick={() => console.log("Navigate Button Clicked")}
@@ -369,30 +376,30 @@ const ChatLayout = () => {
       <section className="development container">
         <div className="development-container">
           <div className="development-container__content">
-            <h1 className="development-container__content-title">
+            <h1 className="development-container__content-title reveal">
               Are you <br /> Professional Developer?
             </h1>
-            <p className="development-container__content-desc">
+            <p className="development-container__content-desc reveal">
               Looking for skilled developers? Hire experienced professionals to bring your projects to life.
             </p>
           </div>
           <DynamicButton
             text="Get your job"
             padding="10px 24px"
-            className="button primary"
+            className="button primary reveal"
             onClick={() => console.log("Navigate Button Clicked")}
           />
         </div>
       </section>
       <section className="faq-section container">
-        <header className="available-header  reveal" style={{ "--i": 0.5 }}>
+        <header className="available-header reveal" style={{ "--i": 0.5 }}>
           <h1 className="available-header__title">FAQ</h1>
         </header>
         <div className="faq-section__list">
           {faqs.map((faq) => (
             <div
               key={faq.id}
-              className={`faq-section__item reveal ${faq.isOpen ? "open" : ""}`}
+              className={`faq-section__item ${faq.isOpen ? "open" : ""} reveal`}
               style={{ "--i": faq.id - 1.5 }}
               onClick={() => toggleFaq(faq.id)}
             >
