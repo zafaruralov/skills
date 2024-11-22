@@ -50,7 +50,7 @@ const Faq = () => {
         {faqs.map((faq) => (
           <div
             key={faq.id}
-            className={`faq-section__item ${faq.isOpen ? "open" : ""} reveal`}
+            className="faq-section__item reveal"
             style={{ "--i": faq.id - 1.5 }}
             onClick={() => toggleFaq(faq.id)}
           >

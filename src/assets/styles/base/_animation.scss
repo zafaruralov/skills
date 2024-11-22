@@ -60,7 +60,7 @@
   --interval: calc(var(--duration) - var(--stagger));
   animation-name: slide;
   animation-duration: var(--duration);
-  animation-delay: calc(var(--interval) * var(--i));
+  // animation-delay: calc(var(--interval) * var(--i));
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
 

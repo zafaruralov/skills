@@ -11,7 +11,7 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer-container">
         <div className="footer-container__logo">
-          <img src={FooterIcon} alt="footer-icon" aria-lable="footer icon" />
+          <img src={FooterIcon} alt="footer-icon" />
         </div>
         <div className="footer-container__links">
           <div className="footer-container__links-wrapper">

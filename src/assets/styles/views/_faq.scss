@@ -5,12 +5,12 @@
   max-width: 1440px;
   padding: 120px;
 
-  @media (max-width: 1024px) {
-    padding: 80px 60px 0 60px;
+  @media (max-width: 1200px) {
+    padding: 60px;
   }
 
   @media (max-width: 768px) {
-    padding: 60px 20px;
+    padding: 30px 20px;
     gap: 20px;
   }
 
@@ -34,7 +34,7 @@
     animation-name: fadeInUp;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 
-    &.open {
+    &.opened {
       max-height: 400px;
 
       .faq-section__arrow::before {

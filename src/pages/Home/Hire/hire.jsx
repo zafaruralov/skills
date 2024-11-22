@@ -42,8 +42,8 @@ const Hire = () => {
           </div>
           <div className="hire__actions">
             <DynamicButton
+              className="button secondary sm"
               text="Find a Developer"
-              backgroundColor="#0d92f4"
               gap="10px"
               onClick={() => console.log("Navigate Button Clicked")}
             />
@@ -57,11 +57,9 @@ const Hire = () => {
                   style={{ width: "24px", height: "24px" }}
                 />
               }
-              textColor="#0d92f4"
-              backgroundColor="#fff"
+              className="button primary sm"
               borderRadius="10px"
               gap="10px"
-              border="1px solid #0D92F4"
               onClick={() => console.log("Navigate Button Clicked")}
             />
           </div>

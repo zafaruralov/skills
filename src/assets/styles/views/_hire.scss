@@ -15,7 +15,7 @@
     display: flex;
     max-width: 447px;
     cursor: pointer;
-    gap: 32px;
+    gap: 30px;
     align-items: flex-start;
     justify-content: flex-start;
     border: 1px solid $border-color;
@@ -107,7 +107,7 @@
   @media (max-width: 1200px) {
     display: flex;
     grid-template-columns: 1fr;
-    padding: 80px 60px 0 60px;
+    padding: 60px 60px 0 60px;
 
     &__wrapper {
       order: 2;
@@ -136,13 +136,13 @@
 
     &__title {
       &-title {
-        font-size: 56px;
-        line-height: 72px;
+        font-size: 42px;
+        line-height: 62px;
       }
 
       &-subtitle {
-        font-size: 56px;
-        line-height: 72px;
+        font-size: 42px;
+        line-height: 62px;
       }
 
       &-desc {
@@ -154,14 +154,14 @@
   @media (max-width: 768px) {
     display: grid;
     grid-template-columns: 1fr;
-    padding: 100px 40px 0 40px;
+    padding: 60px 40px 0 40px;
 
     &__subtitle {
       flex-direction: column;
       width: 100%;
       flex-direction: row;
       align-items: center;
-      gap: 16px;
+      gap: 15px;
     }
 
     &__actions {
@@ -194,10 +194,10 @@
   }
 
   @media (max-width: 480px) {
-    padding: 30px 20px 0 20px;
+    padding: 60px 20px 0 20px;
 
     &__subtitle {
-      gap: 12px;
+      gap: 10px;
       align-items: center;
 
       &-ai,

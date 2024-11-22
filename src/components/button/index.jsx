@@ -1,34 +1,14 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const DynamicButton = ({
-  text,
-  leftIcon,
-  rightIcon,
-  backgroundColor,
-  textColor,
-  padding,
-  borderRadius,
-  borderColor,
-  border,
-  onClick,
-  disabled,
-  className,
-  gap,
-  style
-}) => {
+const DynamicButton = ({ text, leftIcon, rightIcon, borderRadius, onClick, disabled, className, gap, style }) => {
   return (
     <button
       className={`dynamic-button ${className}`}
       onClick={onClick}
       disabled={disabled}
       style={{
-        backgroundColor,
-        color: textColor,
-        padding,
         borderRadius,
-        borderColor,
-        border,
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -46,12 +26,7 @@ const DynamicButton = ({
 
 // Default Props
 DynamicButton.defaultProps = {
-  backgroundColor: "#007BFF",
-  textColor: "#FFFFFF",
-  padding: "12px 24px",
   borderRadius: "10px",
-  borderColor: "1px solid #0D92F4",
-  border: "none",
   gap: "10px",
   onClick: () => {},
   disabled: false,

@@ -14,8 +14,7 @@ const Development = () => {
         </div>
         <DynamicButton
           text="Get your job"
-          padding="10px 24px"
-          className="button primary reveal"
+          className="button primary reveal md"
           onClick={() => console.log("Navigate Button Clicked")}
         />
       </div>

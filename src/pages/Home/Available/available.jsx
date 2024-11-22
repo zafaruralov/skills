@@ -114,10 +114,7 @@ const Available = () => {
       <DynamicButton
         text="View all"
         padding="10px 24px"
-        className="button"
-        backgroundColor="inherit"
-        textColor="#0d92f4"
-        border="1px solid #0d92f4"
+        className="button primary sm"
         onClick={() => console.log("Navigate Button Clicked")}
       />
     </section>
