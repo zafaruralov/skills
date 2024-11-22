@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import candidateFilter from "../../assets/images/filter/candidate-filter.svg";
@@ -192,6 +192,7 @@ const CandidatesFilter = () => {
       ]
     }
   ]);
+  const [isLoading, setIsLoading] = useState(true);
 
   const handleContainerClick = (id) => {
     navigate(`/candidates/${id}`);
@@ -226,6 +227,12 @@ const CandidatesFilter = () => {
   // TODO ---------------------------------------------------------------------------------------
   let totalPages = 10;
   const { currentPage, setCurrentPage, getPages, hasNext, hasPrev } = usePagination(totalPages);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setIsLoading(false), 3000);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="cdfilter ">
       <section className="cdfilter-section">

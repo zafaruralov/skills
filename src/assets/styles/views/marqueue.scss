@@ -29,8 +29,14 @@
     }
   }
 }
-@media (max-width: 768) {
+@media (max-width: 768px) {
   .marqueue {
+    &-wrapper {
+      gap: 50px;
+    }
+    &-group {
+      gap: 50px;
+    }
     &-group {
       img {
         width: 70px;

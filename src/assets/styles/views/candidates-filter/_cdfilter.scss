@@ -295,7 +295,11 @@
       }
     }
     &:focus-within {
-      border-color: #007bff; // Use the desired color
+      border-color: #007bff;
+
+      img {
+        color: red;
+      }
     }
   }
   &-name {

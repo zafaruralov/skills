@@ -6,7 +6,7 @@
   justify-content: center;
 
   @media (max-width: 1200px) {
-    padding: 60px 60px 0 60px;
+    padding: 60px 20px 0 20px;
     grid: none;
     justify-content: center;
   }
@@ -43,7 +43,7 @@
 
     @media (max-width: 480px) {
       height: 150px;
-      width: 100%;
+      width: 300px;
       justify-content: space-between;
     }
 

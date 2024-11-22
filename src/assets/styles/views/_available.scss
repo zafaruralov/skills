@@ -138,7 +138,7 @@
   }
 
   @media screen and (max-width: 1200px) {
-    padding: 60px 60px 0 60px;
+    padding: 60px 20px 0 20px;
 
     &-header {
       &__title {
@@ -257,22 +257,54 @@
       &__container {
         padding: 8px;
 
+        &-subtitle {
+          gap: 0;
+        }
+
         &-image {
           width: 120px;
           height: 160px;
         }
 
+        &-datas {
+          gap: 4px;
+        }
+
+        &-content {
+          gap: 8px;
+        }
+
+        &-data {
+          gap: 4px;
+          &-text {
+            font-size: 10px;
+          }
+          &-icon {
+            width: 15px;
+            height: 15px;
+          }
+        }
+
         &-title {
           font-size: 16px;
+          line-height: 24px;
         }
         &-tech {
           font-size: 12px;
+          line-height: 20px;
         }
         &-desc {
           font-size: 10px;
+          line-height: 16px;
         }
         &-salery {
           font-size: 18px;
+          line-height: 28px;
+        }
+
+        &-badge {
+          padding: 2px 6px;
+          gap: 6px;
         }
       }
     }
