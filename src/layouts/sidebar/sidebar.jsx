@@ -5,15 +5,22 @@ import globalIcon from "../../assets/images/header/global.svg";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [lang, setLang] = useState(false);
+  const [chlang, setChLang] = useState("En");
   // const navigate = useNavigate();
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
   };
+  const toggleLang = () => {
+    setLang(!lang);
+  };
 
-  // const handleContainerClick = () => {
-  //   navigate(`/candidates`);
-  // };
+  const toggleLan = (name) => {
+    setChLang(name);
+    setLang(!lang);
+  };
+
   return (
     <header className="app-navbar">
       <div className="app-navbar__icon">
@@ -43,9 +50,21 @@ const Header = () => {
       </ul>
 
       <div className="app-navbar__actions">
-        <div className="app-navbar__lang">
-          <img src={globalIcon} alt="global image" />
-          <h2 className="app-navbar__lang-title">Eng</h2>
+        <div className={`app-navbar__langs ${lang ? "open" : ""}`}>
+          <div className="app-navbar__lang" onClick={toggleLang}>
+            <img src={globalIcon} alt="global image" />
+            <h2 className="app-navbar__lang-title">{chlang}</h2>
+          </div>
+          <div className="app-navbar__lang-body">
+            <div className="app-navbar__lang" onClick={() => toggleLan("Uz")}>
+              <img src={globalIcon} alt="global image" />
+              <h2 className="app-navbar__lang-title">Uz</h2>
+            </div>
+            <div className="app-navbar__lang" onClick={() => toggleLan("En")}>
+              <img src={globalIcon} alt="global image" />
+              <h2 className="app-navbar__lang-title">En</h2>
+            </div>
+          </div>
         </div>
         <div className="app-navbar__actions-wrapper">
           <button className="button primary">Login</button>
