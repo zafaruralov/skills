@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+import usePagination from "../../components/pagination";
+import CDfilterSkeleton from "../../components/CDfilterSkeleton";
 import candidateFilter from "../../assets/images/filter/candidate-filter.svg";
 import arrowUp from "../../assets/images/filter/arrow-up.svg";
 import search from "../../assets/images/filter/search.svg";
@@ -11,7 +13,6 @@ import candidateImage from "../../assets/images/filter/candidate-image.svg";
 import global from "../../assets/images/filter/global.svg";
 import verify from "../../assets/images/filter/verify.svg";
 import clock from "../../assets/images/filter/clock.svg";
-import usePagination from "../../components/pagination";
 
 const CandidatesFilter = () => {
   const [filter, setFilter] = useState([
@@ -229,11 +230,13 @@ const CandidatesFilter = () => {
   const { currentPage, setCurrentPage, getPages, hasNext, hasPrev } = usePagination(totalPages);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 3000);
+    const timer = setTimeout(() => setIsLoading(false), 30000);
     return () => clearTimeout(timer);
   }, []);
-
-  return (
+  return isLoading ? (
+    <CDfilterSkeleton />
+  ) : (
+    // return (
     <div className="cdfilter ">
       <section className="cdfilter-section">
         <div className="container cdfilter-gap">

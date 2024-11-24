@@ -49,6 +49,11 @@
     transform: none;
   }
 }
+@keyframes shine {
+  to {
+    background-position-x: -200%;
+  }
+}
 
 .reveal {
   opacity: 0;
