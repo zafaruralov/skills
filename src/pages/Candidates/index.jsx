@@ -230,7 +230,7 @@ const CandidatesFilter = () => {
   const { currentPage, setCurrentPage, getPages, hasNext, hasPrev } = usePagination(totalPages);
 
   useEffect(() => {
-    const timer = setTimeout(() => setIsLoading(false), 30000);
+    const timer = setTimeout(() => setIsLoading(false), 300);
     return () => clearTimeout(timer);
   }, []);
   return isLoading ? (

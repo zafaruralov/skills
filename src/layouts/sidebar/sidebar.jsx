@@ -1,24 +1,42 @@
-import React, { useState } from "react";
-// import { useNavigate } from "react-router-dom";
+import React, { useState, useRef, useEffect } from "react";
 import headerIcon from "../../assets/images/header/header-icon.svg";
 import globalIcon from "../../assets/images/header/global.svg";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [lang, setLang] = useState(false);
-  const [chlang, setChLang] = useState("En");
-  // const navigate = useNavigate();
+  const [isLangOpen, setIsLangOpen] = useState(false);
+  const [selectedLang, setSelectedLang] = useState("En");
+
+  const menuRef = useRef(null);
+  const langRef = useRef(null);
+
+  const handleClickOutside = (event) => {
+    if (menuRef.current && !menuRef.current.contains(event.target)) {
+      setIsMenuOpen(false);
+    }
+    if (langRef.current && !langRef.current.contains(event.target)) {
+      setIsLangOpen(false);
+    }
+  };
+
+  useEffect(() => {
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
 
   const toggleMenu = () => {
     setIsMenuOpen((prev) => !prev);
   };
+
   const toggleLang = () => {
-    setLang(!lang);
+    setIsLangOpen((prev) => !prev);
   };
 
-  const toggleLan = (name) => {
-    setChLang(name);
-    setLang(!lang);
+  const changeLanguage = (lang) => {
+    setSelectedLang(lang);
+    setIsLangOpen(false);
   };
 
   return (
@@ -31,6 +49,7 @@ const Header = () => {
         className={`app-navbar__hamburger ${isMenuOpen ? "open" : ""}`}
         aria-label="Toggle menu"
         onClick={toggleMenu}
+        ref={menuRef}
       >
         <span></span>
         <span></span>
@@ -39,32 +58,40 @@ const Header = () => {
 
       <ul className={`app-navbar__links ${isMenuOpen ? "app-navbar__links--open" : ""}`}>
         <li className="app-navbar__link">
-          <a href="/">Career</a>
+          <a href="/" onClick={() => setIsMenuOpen(false)}>
+            Career
+          </a>
         </li>
         <li className="app-navbar__link">
-          <a href="/candidates">Candidates</a>
+          <a href="/candidates" onClick={() => setIsMenuOpen(false)}>
+            Candidates
+          </a>
         </li>
         <li className="app-navbar__link">
-          <a href="">Info</a>
+          <a href="/info" onClick={() => setIsMenuOpen(false)}>
+            Info
+          </a>
         </li>
       </ul>
 
       <div className="app-navbar__actions">
-        <div className={`app-navbar__langs ${lang ? "open" : ""}`}>
+        <div className={`app-navbar__langs ${isLangOpen ? "open" : ""}`} ref={langRef}>
           <div className="app-navbar__lang" onClick={toggleLang}>
             <img src={globalIcon} alt="global image" />
-            <h2 className="app-navbar__lang-title">{chlang}</h2>
+            <h2 className="app-navbar__lang-title">{selectedLang}</h2>
           </div>
-          <div className="app-navbar__lang-body">
-            <div className="app-navbar__lang" onClick={() => toggleLan("Uz")}>
-              <img src={globalIcon} alt="global image" />
-              <h2 className="app-navbar__lang-title">Uz</h2>
+          {isLangOpen && (
+            <div className="app-navbar__lang-body">
+              <div className="app-navbar__lang" onClick={() => changeLanguage("Uz")}>
+                <img src={globalIcon} alt="global image" />
+                <h2 className="app-navbar__lang-title">Uz</h2>
+              </div>
+              <div className="app-navbar__lang" onClick={() => changeLanguage("En")}>
+                <img src={globalIcon} alt="global image" />
+                <h2 className="app-navbar__lang-title">En</h2>
+              </div>
             </div>
-            <div className="app-navbar__lang" onClick={() => toggleLan("En")}>
-              <img src={globalIcon} alt="global image" />
-              <h2 className="app-navbar__lang-title">En</h2>
-            </div>
-          </div>
+          )}
         </div>
         <div className="app-navbar__actions-wrapper">
           <button className="button primary">Login</button>

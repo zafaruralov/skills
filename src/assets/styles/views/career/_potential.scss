@@ -1,0 +1,122 @@
+.potentials {
+  background: $section-bg;
+}
+.potential {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: 552px 648px;
+  padding: 140px 0 82px;
+
+  &-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+  }
+  &-ai {
+    padding: 8px 16px;
+    gap: 16px;
+    border-radius: 100px;
+    background: $filter-container-bg;
+    border: 1px solid $filter-container-border-color;
+
+    display: flex;
+    align-items: center;
+    max-width: 428px;
+
+    &-link {
+      font-size: 16px;
+      font-weight: 500;
+      line-height: 20px;
+      background: linear-gradient(93.96deg, #4a87fe 46.76%, #784fff 87.99%);
+      background-size: 200% 200%;
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: gradient-animation 3s infinite linear;
+    }
+  }
+  &-subtitle {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  &-title {
+    font-weight: 700;
+    line-height: 62px;
+    letter-spacing: -0.02em;
+    font-size: 48px;
+
+    span {
+      background: linear-gradient(93.96deg, #4a87fe 46.76%, #784fff 87.99%);
+      background-size: 200% 200%;
+      background-clip: text;
+      -webkit-background-clip: text;
+      color: transparent;
+      animation: gradient-animation 3s infinite linear;
+    }
+  }
+  &-desc {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    color: $filter-container-text-gray;
+  }
+  &-actions {
+    display: flex;
+    gap: 8px;
+  }
+  &-image {
+    overflow: hidden;
+    position: relative;
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 100px;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    &::before {
+      left: 0;
+      background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(0, 0, 0, 0));
+    }
+
+    &::after {
+      right: 0;
+      background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    }
+
+    &-wrapper {
+      display: flex;
+      width: 200%;
+      gap: 80px;
+      padding: 7px 0;
+
+      &:nth-child(even) {
+        .potential-image-group {
+          animation: reverse-scroll-x 20s linear infinite;
+        }
+      }
+    }
+    &-husk {
+      border: 1.21px solid $filter-container-border-color;
+      background: #ffffff;
+      width: 117.67px;
+      height: 117.67px;
+      padding: 6.01px 5.84px 5.66px 5.84px;
+      border-radius: 28.98px;
+    }
+
+    &-group {
+      object-fit: fill;
+      display: flex;
+      gap: 80px;
+      padding: 7px 0;
+      animation: scroll-x 20s linear infinite;
+    }
+  }
+}

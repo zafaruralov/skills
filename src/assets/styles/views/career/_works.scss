@@ -1,0 +1,95 @@
+.work {
+  padding: 120px 0 120px;
+}
+.works {
+  display: flex;
+  flex-direction: column;
+  gap: 56px;
+  justify-content: center;
+
+  &-subtitle {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    &__title {
+      font-size: 40px;
+      font-weight: 600;
+      line-height: 48px;
+      color: $text-black;
+    }
+    &__desc {
+      max-width: 480px;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      color: $work-text-grey;
+    }
+  }
+  &-containers {
+    display: flex;
+    gap: 20px;
+  }
+  &-container {
+    width: 285px;
+    padding: 20px;
+    border-radius: 12px;
+
+    // --border-angle: 0turn;
+    // --main-bg: conic-gradient(
+    //   from var(--border-angle),
+    //   rgb(255, 255, 255) 0%,
+    //   rgb(255, 255, 255) 300%,
+    //   rgb(255, 255, 255) 900%
+    // );
+    border: solid 2px #4b556331;
+    // --gradient-border: conic-gradient(
+    //   from var(--border-angle),
+    //   rgba(10, 10, 10, 0.1),
+    //   rgba(47, 0, 255, 0.226) 20%,
+    //   rgba(255, 30, 0, 0.226) 40%,
+    //   rgba(0, 255, 13, 0.212) 60%,
+    //   rgb(255, 255, 255) 100%
+    // );
+    // background: var(--main-bg) padding-box, var(--gradient-border) border-box, var(--main-bg) border-box;
+    // background-position: center center;
+    // animation: bg-spin 3s linear infinite;
+
+    display: flex;
+    gap: 32px;
+    flex-direction: column;
+
+    &__icon {
+      width: 28px;
+      height: 28px;
+    }
+    &__wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    &__navbar {
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 20px;
+      color: $filter-input-txt;
+    }
+    &__subtitle {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    &__title {
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 28px;
+      color: #1d1d1d;
+    }
+    &__desc {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 24px;
+      color: #0a0a0ab2;
+    }
+  }
+}

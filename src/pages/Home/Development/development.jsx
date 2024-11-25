@@ -14,7 +14,7 @@ const Development = () => {
         </div>
         <DynamicButton
           text="Get your job"
-          className="button primary reveal md"
+          className="button secondary reveal md"
           onClick={() => console.log("Navigate Button Clicked")}
         />
       </div>

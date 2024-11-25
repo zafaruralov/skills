@@ -42,9 +42,11 @@
     }
   }
 
-  .button-icon-left {
+  .button-icon-left,
+  .icon-right {
     display: flex;
     align-items: center;
+    justify-content: center;
   }
   .secondary:hover,
   .secondary:focus {

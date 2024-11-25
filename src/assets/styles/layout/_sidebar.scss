@@ -32,10 +32,10 @@
       top: 60px;
       right: 20px;
       background: #fff;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
       padding: 16px;
       border-radius: 8px;
       width: 200px;
+      box-shadow: 0px 4px 8px 0px #00000029;
     }
   }
 
@@ -80,6 +80,7 @@
       .app-navbar__lang-body {
         display: flex;
         position: absolute;
+        box-shadow: 0px 4px 8px 0px #00000029;
 
         top: 200%;
         left: 50%;

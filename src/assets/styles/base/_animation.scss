@@ -1,9 +1,47 @@
+@keyframes gradient-animation {
+  0% {
+    background-position: 50% 0%;
+  }
+  25% {
+    background-position: 75% 25%;
+  }
+  50% {
+    background-position: 50% 50%;
+  }
+  75% {
+    background-position: 25% 75%;
+  }
+  100% {
+    background-position: 50% 100%;
+  }
+}
+
+@property --border-angle {
+  syntax: "<angle>";
+  inherits: true;
+  initial-value: 0turn;
+}
+
+@keyframes bg-spin {
+  to {
+    --border-angle: 1turn; /* Rotate the gradient */
+  }
+}
+
 @keyframes scroll-x {
   0% {
     transform: translateX(0%);
   }
   100% {
     transform: translateX(calc(-100% - 80px));
+  }
+}
+@keyframes reverse-scroll-x {
+  0% {
+    transform: translateX(calc(-100% - 80px));
+  }
+  100% {
+    transform: translateX(0%);
   }
 }
 @keyframes fadeInUp {
