@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import Potential from "../pages/Career/Potential";
 import HowItWorks from "../pages/Career/Work";
 import Discover from "../pages/Career/Discover";
+import Faq from "../pages/Career/Faq";
+import Evaluate from "../pages/Career/Evaluate";
 
 const CareerLayout = () => {
   // TODO
@@ -36,6 +38,8 @@ const CareerLayout = () => {
       <Potential />
       <HowItWorks />
       <Discover />
+      <Faq />
+      <Evaluate />
     </div>
   );
 };

@@ -9,13 +9,33 @@ import TAFU from "../../../assets/images/career/TAFU.svg";
 import mohirdev from "../../../assets/images/career/mohirdev.svg";
 import t4data from "../../../assets/images/career/t4data.svg";
 import venkon from "../../../assets/images/career/venkon.svg";
+import AloqaBank from "../../../assets/images/career/aloqa-bank.svg";
+import Beeline from "../../../assets/images/career/beeline.svg";
+import Commeta from "../../../assets/images/career/commeta.svg";
+import Epam from "../../../assets/images/career/epam.svg";
+import Itput from "../../../assets/images/career/itpu.svg";
+import Labs from "../../../assets/images/career/labs.svg";
+import Sens from "../../../assets/images/career/sens.svg";
+import Steps from "../../../assets/images/career/steps.svg";
+import Turon from "../../../assets/images/career/turon.svg";
+import Zte from "../../../assets/images/career/zte.svg";
 
 const Potential = () => {
   const [queueImages] = useState([
     { id: 1, image: TAFU },
     { id: 2, image: mohirdev },
     { id: 3, image: t4data },
-    { id: 4, image: venkon }
+    { id: 4, image: venkon },
+    { id: 5, image: AloqaBank },
+    { id: 6, image: Beeline },
+    { id: 7, image: Commeta },
+    { id: 8, image: Epam },
+    { id: 9, image: Itput },
+    { id: 10, image: Labs },
+    { id: 11, image: Sens },
+    { id: 12, image: Steps },
+    { id: 13, image: Turon },
+    { id: 14, image: Zte }
   ]);
   return (
     <section className="potentials">

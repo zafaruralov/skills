@@ -1,11 +1,12 @@
 .potentials {
   background: $section-bg;
 }
+
 .potential {
   display: grid;
   justify-content: center;
   grid-template-columns: 552px 648px;
-  padding: 140px 0 82px;
+  padding: 190px 0 82px;
 
   &-wrapper {
     display: flex;
@@ -13,12 +14,14 @@
     flex-direction: column;
     gap: 40px;
   }
+
   &-ai {
     padding: 8px 16px;
     gap: 16px;
     border-radius: 100px;
     background: $filter-container-bg;
     border: 1px solid $filter-container-border-color;
+    animation: slide 0.5s forwards;
 
     display: flex;
     align-items: center;
@@ -36,16 +39,19 @@
       animation: gradient-animation 3s infinite linear;
     }
   }
+
   &-subtitle {
     display: flex;
     flex-direction: column;
     gap: 20px;
   }
+
   &-title {
     font-weight: 700;
     line-height: 62px;
     letter-spacing: -0.02em;
     font-size: 48px;
+    animation: slide 1s forwards;
 
     span {
       background: linear-gradient(93.96deg, #4a87fe 46.76%, #784fff 87.99%);
@@ -56,19 +62,25 @@
       animation: gradient-animation 3s infinite linear;
     }
   }
+
   &-desc {
     font-size: 18px;
     font-weight: 400;
     line-height: 28px;
     color: $filter-container-text-gray;
+    animation: slide 1.5s forwards;
   }
+
   &-actions {
     display: flex;
     gap: 8px;
+    animation: slide 2s forwards;
   }
+
   &-image {
     overflow: hidden;
     position: relative;
+
     &::before,
     &::after {
       content: "";
@@ -82,41 +94,134 @@
 
     &::before {
       left: 0;
-      background: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(0, 0, 0, 0));
+      background: linear-gradient(to right, #f6f9fe, #f6f9fe00);
     }
 
     &::after {
       right: 0;
-      background: linear-gradient(to left, rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+      background: linear-gradient(to left, #f6f9fe, #f6f9fe00);
     }
 
     &-wrapper {
       display: flex;
       width: 200%;
-      gap: 80px;
-      padding: 7px 0;
+      gap: 23px;
 
       &:nth-child(even) {
         .potential-image-group {
-          animation: reverse-scroll-x 20s linear infinite;
+          animation: reverse-scroll-x 40s linear infinite;
         }
       }
     }
+
     &-husk {
       border: 1.21px solid $filter-container-border-color;
       background: #ffffff;
-      width: 117.67px;
-      height: 117.67px;
       padding: 6.01px 5.84px 5.66px 5.84px;
-      border-radius: 28.98px;
+      border-radius: 20.98px;
+
+      img {
+        width: 117.67px;
+        height: 117.67px;
+        object-fit: contain;
+      }
     }
 
     &-group {
       object-fit: fill;
       display: flex;
-      gap: 80px;
+      gap: 23px;
       padding: 7px 0;
-      animation: scroll-x 20s linear infinite;
+      animation: scroll-x 40s linear infinite;
+    }
+  }
+
+  @media (max-width: 1200px) {
+    grid-template-columns: 1fr;
+    padding: 80px 0px;
+    gap: 40px;
+
+    &-wrapper {
+      gap: 30px;
+      align-items: center;
+    }
+
+    &-image {
+      &-husk {
+        img {
+          width: 87.67px;
+          height: 87.67px;
+        }
+      }
+    }
+
+    &-title {
+      font-size: 40px;
+      line-height: 50px;
+      text-align: center;
+    }
+
+    &-desc {
+      font-size: 16px;
+      line-height: 24px;
+      text-align: center;
+    }
+  }
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+
+    &-ai {
+      max-width: 100%;
+      padding: 6px 12px;
+    }
+
+    &-title {
+      font-size: 32px;
+      line-height: 40px;
+    }
+
+    &-desc {
+      font-size: 14px;
+      line-height: 20px;
+    }
+    &-image {
+      &-husk {
+        img {
+          width: 67.67px;
+          height: 67.67px;
+        }
+      }
+    }
+
+    &-actions {
+      gap: 12px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    &-ai {
+      padding: 4px 8px;
+      gap: 8px;
+    }
+
+    &-title {
+      font-size: 24px;
+      line-height: 32px;
+    }
+
+    &-desc {
+      font-size: 12px;
+      line-height: 18px;
+    }
+
+    &-actions {
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    &-image {
+      display: none; // Optional: Hide images for small screens to save space
     }
   }
 }

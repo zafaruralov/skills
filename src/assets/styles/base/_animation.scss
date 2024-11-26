@@ -15,17 +15,16 @@
     background-position: 50% 100%;
   }
 }
-
-@property --border-angle {
-  syntax: "<angle>";
-  inherits: true;
-  initial-value: 0turn;
+@keyframes bg {
+  to {
+    --angle: 360deg;
+  }
 }
 
-@keyframes bg-spin {
-  to {
-    --border-angle: 1turn; /* Rotate the gradient */
-  }
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
 }
 
 @keyframes scroll-x {

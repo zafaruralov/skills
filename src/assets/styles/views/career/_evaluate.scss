@@ -1,0 +1,109 @@
+.evaluates {
+  padding: 120px 0;
+
+  @media (max-width: 768px) {
+    padding: 60px 20px;
+  }
+}
+
+.evaluate {
+  display: flex;
+  justify-content: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+
+  &-container {
+    width: 1200px;
+    height: 400px;
+    gap: 16px;
+    border-radius: 32px;
+    background: linear-gradient(0deg, #2563eb, #2563eb), linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    @media (max-width: 992px) {
+      width: 100%;
+      height: auto;
+      border-radius: 24px;
+    }
+
+    @media (max-width: 768px) {
+    }
+  }
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    align-items: center;
+    justify-content: center;
+    max-width: 544px;
+    text-align: center;
+
+    @media (max-width: 768px) {
+      gap: 12px;
+      max-width: 100%;
+    }
+
+    &__title {
+      font-size: 42px;
+      font-weight: 800;
+      line-height: 56px;
+      color: #ffffff;
+
+      @media (max-width: 992px) {
+        font-size: 36px;
+        line-height: 48px;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 28px;
+        line-height: 40px;
+      }
+    }
+
+    &__desc {
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 25.6px;
+      color: #ffffffcc;
+
+      @media (max-width: 992px) {
+        font-size: 14px;
+        line-height: 22px;
+      }
+
+      @media (max-width: 768px) {
+        font-size: 14px;
+        line-height: 20px;
+      }
+    }
+  }
+
+  &-wrapper {
+    height: 400px;
+    max-width: 100%;
+    border-radius: 20px;
+    background: url("../../../images/career/Pattern.svg") no-repeat top;
+    background-size: contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 32px;
+
+    @media (max-width: 992px) {
+      height: auto;
+      padding: 20px;
+      gap: 24px;
+    }
+
+    @media (max-width: 768px) {
+      padding: 16px;
+      gap: 20px;
+    }
+  }
+}

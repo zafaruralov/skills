@@ -58,7 +58,7 @@ const Header = () => {
 
       <ul className={`app-navbar__links ${isMenuOpen ? "app-navbar__links--open" : ""}`}>
         <li className="app-navbar__link">
-          <a href="/" onClick={() => setIsMenuOpen(false)}>
+          <a href="/career" onClick={() => setIsMenuOpen(false)}>
             Career
           </a>
         </li>

@@ -17,8 +17,8 @@ const HowItWorks = () => {
     <section className="work">
       <div className="container works">
         <div className="works-subtitle">
-          <h1 className="works-subtitle__title">How it works</h1>
-          <p className="works-subtitle__desc">
+          <h1 className="works-subtitle__title reveal">How it works</h1>
+          <p className="works-subtitle__desc reveal">
             Bridging talent with leading companies, HR professionals, and career opportunities.
           </p>
         </div>
