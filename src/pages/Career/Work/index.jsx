@@ -22,7 +22,7 @@ const HowItWorks = () => {
             Bridging talent with leading companies, HR professionals, and career opportunities.
           </p>
         </div>
-        <div className="works-containers">
+        <div className="works-containers reveal">
           {queueImages.map((item) => (
             <div className="works-container" key={item.id}>
               <img src={containerIcon} alt="" className="works-container__icon" />

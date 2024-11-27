@@ -80,6 +80,9 @@
   &-image {
     overflow: hidden;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 
     &::before,
     &::after {
@@ -104,35 +107,36 @@
 
     &-wrapper {
       display: flex;
-      width: 200%;
+      width: fit-content;
+      gap: 23px;
+    }
+
+    &-group {
+      display: flex;
       gap: 23px;
 
-      &:nth-child(even) {
-        .potential-image-group {
-          animation: reverse-scroll-x 40s linear infinite;
-        }
+      &.speed-0 {
+        animation: scroll-banners 80s linear infinite;
+      }
+      &.speed-1 {
+        animation: -20s reverse-scroll-banners 80s linear infinite;
+      }
+      &.speed-2 {
+        animation: -40s scroll-banners 80s linear infinite;
       }
     }
 
     &-husk {
-      border: 1.21px solid $filter-container-border-color;
+      border: 1px solid #d3d3d3;
       background: #ffffff;
-      padding: 6.01px 5.84px 5.66px 5.84px;
-      border-radius: 20.98px;
+      padding: 6px;
+      border-radius: 20px;
 
       img {
-        width: 117.67px;
-        height: 117.67px;
+        width: 120px;
+        height: 120px;
         object-fit: contain;
       }
-    }
-
-    &-group {
-      object-fit: fill;
-      display: flex;
-      gap: 23px;
-      padding: 7px 0;
-      animation: scroll-x 40s linear infinite;
     }
   }
 
@@ -170,6 +174,7 @@
 
   @media (max-width: 768px) {
     grid-template-columns: 1fr;
+    padding: 80px 0px 40px 0;
 
     &-ai {
       max-width: 100%;

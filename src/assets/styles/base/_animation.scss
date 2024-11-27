@@ -43,6 +43,23 @@
     transform: translateX(0%);
   }
 }
+
+@keyframes scroll-banners {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - 23px));
+  }
+}
+@keyframes reverse-scroll-banners {
+  from {
+    transform: translateX(calc(-100% - 23px));
+  }
+  to {
+    transform: translateX(0);
+  }
+}
 @keyframes fadeInUp {
   0% {
     opacity: 0;

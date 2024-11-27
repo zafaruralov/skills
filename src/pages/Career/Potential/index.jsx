@@ -85,25 +85,18 @@ const Potential = () => {
           {Array(3)
             .fill()
             .map((_, index) => (
-              <div className="potential-image-wrapper" key={index}>
-                <div className="potential-image-group">
+              <div className="potential-image-wrapper" key={index} data-index={index}>
+                <div className={`potential-image-group speed-${index}`}>
                   {queueImages.map((item) => (
-                    <div className="potential-image-husk">
-                      <img key={item.id} src={item.image} alt="queue-images" aria-label="supports image" />
+                    <div className="potential-image-husk" key={`${item.id}-${index}`}>
+                      <img src={item.image} alt="queue-images" aria-label="supports image" />
                     </div>
                   ))}
                 </div>
-                <div aria-hidden="true" className="potential-image-group">
+                <div className={`potential-image-group speed-${index}`} aria-hidden="true">
                   {queueImages.map((item) => (
-                    <div className="potential-image-husk">
-                      <img key={item.id} src={item.image} alt="queue-images" aria-label="supports image" />
-                    </div>
-                  ))}
-                </div>
-                <div aria-hidden="true" className="potential-image-group">
-                  {queueImages.map((item) => (
-                    <div className="potential-image-husk">
-                      <img key={item.id} src={item.image} alt="queue-images" aria-label="supports image" />
+                    <div className="potential-image-husk" key={`duplicate-${item.id}-${index}`}>
+                      <img src={item.image} alt="queue-images" aria-label="supports image" />
                     </div>
                   ))}
                 </div>

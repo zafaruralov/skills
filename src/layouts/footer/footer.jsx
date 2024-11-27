@@ -1,5 +1,5 @@
 import React from "react";
-import FooterIcon from "../../assets/images/footer/footer-icon.svg";
+import FooterIcon from "../../assets/images/header/header-icon.svg";
 import Call from "../../assets/images/footer/call.svg";
 import Instagram from "../../assets/images/footer/instagram.svg";
 import LinkedIn from "../../assets/images/footer/linkedIn.svg";
